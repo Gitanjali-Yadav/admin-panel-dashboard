@@ -1,6 +1,8 @@
 # Admin Panel Dashboard
 Check Live Demo: https://admin-panel-dashboard-project.netlify.app/
-![Uploading image.png…]()
+
+![image](https://github.com/user-attachments/assets/fccdd3c1-592b-46cd-96bb-514193ae7b8f)
+
 
 ## Overview
 This project is a modern admin panel dashboard built using React and Syncfusion components. It provides a comprehensive interface for managing various aspects of an application, including charts, user profiles, and more.
