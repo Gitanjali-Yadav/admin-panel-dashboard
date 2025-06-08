@@ -1,3 +1,5 @@
+// index.jsx - Barrel file for exporting all dashboard components
+
 // eslint-disable-next-line import/no-cycle
 import Button from './Button';
 // eslint-disable-next-line import/no-cycle

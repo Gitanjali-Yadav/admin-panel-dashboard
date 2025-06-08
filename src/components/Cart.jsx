@@ -1,13 +1,18 @@
+// Cart.jsx - Shopping cart component for the dashboard
+
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import { BsCheck } from 'react-icons/bs';
 
 import { useStateContext } from '../contexts/ContextProvider';
 import { cartData } from '../data/dummy';
 import { Button } from '.';
 
+// Cart component displays a list of items in the cart
 const Cart = () => {
-  const { currentColor } = useStateContext();
+  // Get context values for cart state and theme
+  const { currentColor, setIsClicked, initialState } = useStateContext();
 
   return (
     <div className="bg-half-transparent w-full fixed nav-item top-0 right-0 ">
@@ -20,6 +25,9 @@ const Cart = () => {
             bgHoverColor="light-gray"
             size="2xl"
             borderRadius="50%"
+            text=""
+            bgColor=""
+            width=""
           />
         </div>
         {cartData?.map((item, index) => (

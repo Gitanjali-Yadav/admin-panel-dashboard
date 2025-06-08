@@ -1,3 +1,7 @@
+// dummy.js - Contains mock data, configuration objects, and utility functions for the dashboard demo
+// This file provides sample data and helper functions for tables, charts, Kanban, and other UI components.
+
+// React and icon imports for use in mock data and UI templates
 import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';

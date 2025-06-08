@@ -1,8 +1,13 @@
+// Ecommerce.jsx - Main dashboard page showing key metrics and charts
+
 import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
+import { MdOutlineShoppingCart, LiaFileInvoiceDollarSolid, HiTrendingUp } from 'react-icons/md';
+import { MdOutlineSupervisedUserCircle } from 'react-icons/md';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
@@ -15,17 +20,20 @@ const DropDown = ({ currentMode }) => (
   </div>
 );
 
+// Ecommerce component displays the main dashboard with various charts and metrics
 const Ecommerce = () => {
+  // Get context values for theme and UI state
   const { currentColor, currentMode } = useStateContext();
+  const [dropdown, setDropdown] = useState(false);
 
   return (
-    <div className="mt-24">
-      <div className="flex flex-wrap lg:flex-nowrap justify-center ">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
-          <div className="flex justify-between items-center">
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <div className="grid lg:grid-cols-2 gap-10 mb-10">
+        <div className=" bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-full 2xl:w-full m-3 p-4 shadow-upward">
+          <div className="flex justify-between items-center ">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
-              <p className="text-red text-2xl">$63,448.78</p>
+              <p className="text-2xl">$63,448.78</p>
             </div>
             <button
               type="button"

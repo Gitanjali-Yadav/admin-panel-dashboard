@@ -1,7 +1,10 @@
+// Button.jsx - Reusable button component for the dashboard
+
 import React from 'react';
 
 import { useStateContext } from '../contexts/ContextProvider';
 
+// Button component that accepts color, bgColor, size, text, borderRadius, and icon as props
 const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, width }) => {
   const { setIsClicked, initialState } = useStateContext();
 

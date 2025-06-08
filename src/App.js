@@ -1,3 +1,6 @@
+// App.js - Main application component for the admin dashboard
+// Handles routing, theming, and layout structure
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
@@ -9,9 +12,12 @@ import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
 
+// Main App component
 const App = () => {
+  // Destructure context values for theme and layout
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
 
+  // On mount, set theme from localStorage if available
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
@@ -22,9 +28,11 @@ const App = () => {
   }, []);
 
   return (
+    // Set dark mode class if enabled
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative dark:bg-main-dark-bg">
+          {/* Floating settings button */}
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
             <TooltipComponent
               content="Settings"
@@ -41,6 +49,7 @@ const App = () => {
 
             </TooltipComponent>
           </div>
+          {/* Sidebar navigation */}
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
               <Sidebar />
@@ -50,6 +59,7 @@ const App = () => {
               <Sidebar />
             </div>
           )}
+          {/* Main content area */}
           <div
             className={
               activeMenu
@@ -57,12 +67,15 @@ const App = () => {
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }
           >
+            {/* Top navbar */}
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
               <Navbar />
             </div>
             <div>
+              {/* Theme settings panel */}
               {themeSettings && (<ThemeSettings />)}
 
+              {/* Application routes */}
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={(<Ecommerce />)} />
@@ -91,6 +104,7 @@ const App = () => {
 
               </Routes>
             </div>
+            {/* Footer */}
             <Footer />
           </div>
         </div>
